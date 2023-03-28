@@ -20,6 +20,8 @@ USAGE:
   (after "CUSTOM CONFIGURATION STARTS HERE").
 - Run this script via: python source_contrasts.py
 
+This script requires Python 3.10 or newer.
+
 
 OUTPUT:
 
@@ -79,7 +81,7 @@ CONTRASTS = [
 
 # SPECIFY FREQUENCY BANDS HERE (in Hz)
 FREQ_BANDS = [
-    # FreqBand(name='alpha', fmin=8, fmax=12.5),
+    FreqBand(name='alpha', fmin=8, fmax=12.5),
     FreqBand(name="beta", fmin=12.5, fmax=30),
     FreqBand(name="gamma", fmin=30, fmax=100),
 ]
