@@ -84,6 +84,7 @@ FREQ_BANDS = [
     FreqBand(name="gamma", fmin=30, fmax=100),
 ]
 
+# SPEFICY TIME PERIOD TO CROP EPOCHS TO. PASS None TO KEEP THE ORIGINAL EXTENT
 TMIN = 0
 TMAX = None
 
