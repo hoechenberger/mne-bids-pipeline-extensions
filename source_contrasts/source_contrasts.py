@@ -47,8 +47,6 @@ from mne.utils import logger
 from _types import FreqBand, Contrast
 from _paths import get_paths
 
-mne.set_log_level("warning")
-
 
 ### CUSTOM CONFIGURATION STARTS HERE ###
 
