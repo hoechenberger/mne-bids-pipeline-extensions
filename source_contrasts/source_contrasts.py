@@ -158,7 +158,7 @@ def process_one_subject(
                 )
                 epochs_condition_filtered.crop(tmin=tmin, tmax=tmax)
 
-                cov = mne.compute_covariance(epochs_condition_filtered)
+                cov = mne.compute_covariance(epochs_condition_filtered, rank='info')
                 stc = apply_inverse_cov(
                     cov=cov,
                     info=epochs.info,
