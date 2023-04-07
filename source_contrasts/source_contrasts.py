@@ -272,6 +272,10 @@ def grand_average(
                 freq_band=freq_band,
             )
 
+            # Create output directory if it doesn't already exist
+            assert isinstance(paths["output_dir"], Path)
+            paths["output_dir"].mkdir(exist_ok=True)
+
             # Now create a grand average contrast. This is a little hacky
             stc_grand_mean = stc_morphed.copy()
             stc_grand_mean.data = np.array([stc.data for stc in stcs_morphed]).mean(
