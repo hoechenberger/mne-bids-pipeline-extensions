@@ -203,6 +203,11 @@ def process_one_subject(
 
             # Plot the morphed brain
             brain = plot_stc(stc=stc_contrast_morphed, fs_subjects_dir=fs_subjects_dir)
+            # add text to the plot
+            title_string = (f"{contrast.cond_1}–{contrast.cond_2} \n"
+            f"{freq_band.fmin}–{freq_band.fmax} Hz \n"
+            f" {TMIN}–{TMAX} s \n")
+            brain.add_text(0.8, 0.8, title_string)
             brain.save_image(paths["stc_morphed_screenshot"], mode="rgb")
             brain.close()
 
@@ -282,6 +287,12 @@ def grand_average(
 
             # Plot the grand average contrast
             brain = plot_stc(stc=stc_grand_mean, fs_subjects_dir=fs_subjects_dir)
+            # add text to the plot
+            title_string = (f"{contrast.cond_1}–{contrast.cond_2} \n"
+            f"{freq_band.fmin}–{freq_band.fmax} Hz \n"
+            f" {TMIN}–{TMAX} s \n"
+            f" N = {len(subjects)}")
+            brain.add_text(0.8, 0.8, title_string)
             brain.save_image(paths["stc_screenshot"], mode="rgb")
             brain.close()
 
